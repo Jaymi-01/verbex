@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "./ui/button";
 
 export const Hero = () => {
@@ -43,8 +44,8 @@ export const Hero = () => {
             placeholder="Enter your email"
             className="w-full sm:w-80 p-3 rounded-md bg-card border border-border focus:ring-2 focus:ring-primary focus:outline-none text-foreground"
           />
-          <Button size="lg" className="w-full sm:w-auto">
-            Start Your Free Trial
+          <Button size="lg" className="w-full sm:w-auto" asChild>
+            <Link href="/signup">Start Your Free Trial</Link>
           </Button>
         </motion.div>
         {/* Floating UI Mockup Screenshot */}
