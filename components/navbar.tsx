@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { List } from "@phosphor-icons/react";
+import { List, X } from "@phosphor-icons/react";
 import { ThemeToggle } from "@/components/theme-toggle"; // Import the new component
 
 export const Navbar = () => {
@@ -42,7 +42,7 @@ export const Navbar = () => {
           ))}
           <ThemeToggle /> {/* Use the new ThemeToggle component */}
           <Button asChild>
-            <Link href="#get-started">Get Started</Link>
+            <Link href="/signup">Get Started</Link>
           </Button>
         </div>
 
@@ -50,7 +50,7 @@ export const Navbar = () => {
         <div className="md:hidden flex items-center space-x-2">
           <ThemeToggle /> {/* Use the new ThemeToggle component */}
           <Button variant="ghost" size="icon" onClick={toggleMenu}>
-            <List size={24} />
+            {isOpen ? <X size={24} /> : <List size={24} />}
           </Button>
         </div>
       </div>
@@ -75,7 +75,7 @@ export const Navbar = () => {
               </Link>
             ))}
             <Button asChild className="w-full">
-              <Link href="#get-started" onClick={toggleMenu}>Get Started</Link>
+              <Link href="/signup" onClick={toggleMenu}>Get Started</Link>
             </Button>
           </div>
         </motion.div>
