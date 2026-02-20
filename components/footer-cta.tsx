@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -38,8 +39,8 @@ export const FooterCTA = () => {
             placeholder="Your professional email"
             className="w-full sm:w-80 p-3 rounded-md bg-primary-foreground/20 border border-primary-foreground/30 focus:ring-2 focus:ring-primary-foreground focus:outline-none text-primary-foreground placeholder:text-primary-foreground/70"
           />
-          <Button size="lg" className="w-full sm:w-auto bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-            Claim Your Free Trial
+          <Button size="lg" className="w-full sm:w-auto bg-primary-foreground text-primary hover:bg-primary-foreground/90" asChild>
+            <Link href="/signup">Claim Your Free Trial</Link>
           </Button>
         </motion.div>
       </div>
