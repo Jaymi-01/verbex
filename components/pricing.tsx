@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "@phosphor-icons/react";
@@ -156,8 +157,8 @@ export const Pricing = () => {
                   </ul>
                 </CardContent>
                 <CardFooter className="p-0 mt-10">
-                  <Button size="lg" className="w-full font-bold" variant={tier.highlight ? "default" : "outline"}>
-                    {tier.cta}
+                  <Button size="lg" className="w-full font-bold" variant={tier.highlight ? "default" : "outline"} asChild>
+                    <Link href="/signup">{tier.cta}</Link>
                   </Button>
                 </CardFooter>
               </Card>
