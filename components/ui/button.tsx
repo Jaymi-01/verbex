@@ -3,7 +3,6 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { Slot } from "radix-ui"
-import { toast } from "sonner"
 
 import { cn } from "@/lib/utils"
 
@@ -46,7 +45,6 @@ function Button({
   variant = "default",
   size = "default",
   asChild = false,
-  onClick,
   ...props
 }: React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
@@ -54,23 +52,12 @@ function Button({
   }) {
   const Comp = asChild ? Slot.Root : "button"
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (onClick) {
-      onClick(e);
-    } else {
-      toast.info("This button doesn't do anything yet!", {
-        description: "We're still working on this feature.",
-      });
-    }
-  };
-
   return (
     <Comp
       data-slot="button"
       data-variant={variant}
       data-size={size}
       className={cn(buttonVariants({ variant, size, className }))}
-      onClick={handleClick}
       {...props}
     />
   )
